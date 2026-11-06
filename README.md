@@ -1,7 +1,4 @@
-# simple-RPG
-A nobody's first try
-
- # Simple RPG Game 🎮
+# Simple RPG Game 🎮
 
 这是我的第一个 Python 开源项目。
 
