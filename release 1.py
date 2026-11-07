@@ -16,7 +16,9 @@ class player(character):
         global player_time
         player_time-= 1
         target.hp -= 30
-        print(f'{p.name}对{target.name}发动特殊攻击')
+        if target.hp < 0:
+            target.hp = 0
+        print(f'{self.name}对{target.name}发动特殊攻击')
     def run(self):
         self.poss = random.randint(1,2)
         if self.poss == 1:
@@ -31,8 +33,10 @@ class monster(character):
         print(f'{self.name}发动回血,还剩{self.hp}滴血')                                    
     def strike(self,target):
         target.hp -= self.damage*1.5
+        if target.hp < 0:
+            target.hp = 0
         print(f'{self.name}发动重击,{target.name}还剩{target.hp}滴血')
-p = player(input('输入名字>>>'),160,100) 
+p = player(input('输入名字>>>'),15,100) 
 m1 = monster('slime',20,150)
 m2 = monster('goblin',20,150)
 print('游戏开始！')
